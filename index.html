@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="iconFont/iconfont.css">
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/jquery.js"></script>
+
+</head>
+
+<body>
+    <div id="nav">
+        <div class="nav mc-bbc">
+            <div class="nav-bar" style="position: relative">
+                <div class="logo" ng-click="gotoHomepage();"><img alt="" src="images/100708.jpeg"></div>
+                <div class="nav-main">
+                    <!--主页时使用此模板-->
+                    <ul class="nav-main-main">
+                        <li>
+                            <a href="javascript:void(0);" class="active">首页</a>
+                        </li>
+                        <li>
+                            <a href="campus/campus.html">校园招聘</a>
+                        </li>
+                        <li>
+                            <a href="xuanjiang/xuanjiang.html">宣讲会</a></li>
+                        <li>
+                            <a href="social/social.html">社会招聘</a>
+                        </li>
+                        <li>
+                            <a href="http://sinochem.hotjob.cn/wt/Sinochem/web/index/innerLogin?brandCode=1" target="_blank">内部招聘</a>
+                        </li>
+                        <li>
+                            <a href="#news">关于我们</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="search1" id="search" onclick="location.href = 'search/search.html';">
+                    <span class="icon iconfont icon-sousuo1 mc-c"></span>
+                    <input class="search-result  bWhite " type="text" placeholder="搜索职位">
+                </div>
+                <div class="login" ng-click="login()">
+                    <span class=" mc-bc mc-c">登录/注册</span>
+                </div>
+
+                <!-- <div ng-show="userName" class="loginIn ng-hide">
+                    <img data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" alt="">
+                    <ul class="dropdown-menu menu-position" aria-labelledby="dropdownMenu1">
+                        <li><a href="javascript:void (0);" ng-click="personCenter();" class="ng-binding"><span class="nav-icon-1"></span>个人中心</a></li>
+                        <li ng-hide="canBindCode == 1"><a href="javascript:void (0);" ng-click="boundWeChat()" class="ng-binding"><span class="nav-icon-2"></span>绑定微信</a></li>
+                        <li ng-hide="canChangePassword == 1"><a href="javascript:void (0);" ng-click="modifyPassword()" class="ng-binding"><span class="nav-icon-3"></span>修改密码</a></li>
+                        <li><a href="javascript:void (0);" ng-click="exitLogin()" class="ng-binding"><span class="nav-icon-4"></span>退出</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div id="home-page" class="page" style="margin-top: 56px;">
+        <!--插入视频-->
+        <div style="height: 100%;width: 100%">
+            <video style="object-fit: fill" width="100%" height="100%" class="video" loop="" muted="" autoplay="" preload="auto" poster="" webkit-playsinline="">
+                <source src="http://demo.wintalent.cn:84/dayeebj/dayeebj01.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-bg">
+            <div class="video-content">
+                <p>创造价值 追求卓越</p>
+                <p>以人为本，制度管理，专业化服务，致力于企业价值与员工价值的共同提升 </p>
+                <a class="mc-bgc">全球中化 加入我们</a>
+            </div>
+        </div>
+    </div>
+    <div id="group">
+        <div class="group-bar">
+            <div class="group-contain">
+                <h1>集团校招简介</h1>
+                <div class="group-explain"><span>管培生介绍文案管培生介绍文案管培生介绍文案管培生介绍文案管培生介绍文案 管培生介绍文案管培生介绍文案管培生介绍文案管培生介绍文</span></div>
+                <div class="group-url"><span>集团官网：</span><a href="http://www.sinochem.com">http://www.sinochem.com</a></div>
+                <a class="group-join" href="">加入我们</a>
+            </div>
+            <div class="group-img">
+                <div class="scale-img">
+                    <img src="images/sino-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="depart_bar">
+        <div class="depart">
+            <div class="depart_img"><img src="images/sino-c1.png" alt=""></div>
+            <div class="depart_de"><span>金融事业部</span></div>
+            <div class="depart_con"><span>文案介绍文案介绍文案介绍文案 介绍文案介绍文案介绍文案介绍 文案介绍文案介绍</span></div>
+            <div class="shenqin">加入我们</div>
+        </div>
+        <div class="depart">
+            <div class="depart_img"><img src="images/sino-c2.png" alt=""></div>
+            <div class="depart_de"><span>地产事业部</span></div>
+            <div class="depart_con"><span>文案介绍文案介绍文案介绍文案 介绍文案介绍文案介绍文案介绍 文案介绍文案介绍</span></div>
+            <div class="shenqin">加入我们</div>
+        </div>
+        <div class="depart">
+            <div class="depart_img"><img src="images/sino-c3.png" alt=""></div>
+            <div class="depart_de"><span>化工事业部</span></div>
+            <div class="depart_con"><span>文案介绍文案介绍文案介绍文案 介绍文案介绍文案介绍文案介绍 文案介绍文案介绍</span></div>
+            <div class="shenqin">加入我们</div>
+        </div>
+        <div class="depart">
+            <div class="depart_img"><img src="images/sino-c4.png" alt=""></div>
+            <div class="depart_de"><span>能源事业部</span></div>
+            <div class="depart_con"><span>文案介绍文案介绍文案介绍文案 介绍文案介绍文案介绍文案介绍 文案介绍文案介绍</span></div>
+            <div class="shenqin">加入我们</div>
+        </div>
+        <div class="depart">
+            <div class="depart_img"><img src="images/sino-c5.png" alt=""></div>
+            <div class="depart_de"><span>农业事业部</span></div>
+            <div class="depart_con"><span>文案介绍文案介绍文案介绍文案 介绍文案介绍文案介绍文案介绍 文案介绍文案介绍</span></div>
+            <div class="shenqin">加入我们</div>
+        </div>
+    </div>
+    <div id="news">
+        <div class="group-bar">
+            <div class="group-img">
+                <div class="scale-img">
+                    <img src="images/sino-2.jpg" alt="">
+                </div>
+            </div>
+            <div class="group-contain1">
+                <h1>新闻动态</h1>
+                <ul>
+                    <li><a href="">[06-11]  张伟总裁会见黑石集团总裁兼首席运营官Jonathan Gray</a></li>
+                    <li><a href="">[06-10]  中化集团召开生</a></li>
+                    <li><a href="">[06-11]  张伟总裁会见黑石集团总裁兼首席运营官Jonathan Gray</a></li>
+                    <li><a href="">[06-10]  中化集团召开生</a></li>
+                    <li><a href="">[06-11]  张伟总裁会见黑石集团总裁兼首席运营官Jonathan Gray</a></li>
+                    <li><a href="">[06-10]  中化集团召开生</a></li>
+                    <li><a href="">[06-11]  张伟总裁会见黑石集团总裁兼首席运营官Jonathan Gray</a></li>
+                    <li><a href="">[06-10]  中化集团召开生</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer">
+            <div class="footer-content">
+                <span class="copyRight"><p style="text-align:center">大易招聘 &nbsp;© 2007-2018&nbsp;Powered&nbsp;by <a href="http://www.dayee.com" target="_blank">Dayee</a>.</p></span>
+                <div id="dropdownMenu2" class="language clearFloat">
+                    <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img   alt=""  src="images/china.png"></span>
+                    <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="ng-binding">中文</span>
+                    <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="iconfont icon-down"></span>
+                    <ul class="dropdown-menu menu-position" aria-labelledby="dropdownMenu2">
+                        <li ng-click="changeLanType(1)"><a href="javascript:void (0);">中文</a></li>
+                        <li ng-click="changeLanType(2)"><a href="javascript:void (0);">英文</a></li>
+                    </ul>
+                </div>
+                <span class="visitorNumber ng-binding">今日访问：0人次</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+    var height = $(window).height();
+    var width = $(window).width();
+
+    function getHeight() {
+        if (height <= 500) {
+            $(".page").css({
+                'height': 500 + 'px'
+            });
+            $(".video-bg").css({
+                'height': 500 + 'px'
+            });
+        } else {
+            $(".page").css({
+                'height': height - 56 + 'px'
+            });
+            $(".video-bg").css({
+                'height': height - 56 + 'px'
+            });
+        }
+    }
+
+    $(window).resize(function() {
+        height = $(window).height();
+        getHeight();
+    });
+    $(function() {
+        getHeight();
+    });
+</script>
+
+</html>

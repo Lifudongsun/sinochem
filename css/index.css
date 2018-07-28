@@ -1,0 +1,181 @@
+#group {
+    width: 100%;
+    height: 728px;
+    background-color: white;
+}
+
+.group-bar {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.group-contain {
+    width: 600px;
+    padding: 185px 100px 150px 0;
+    box-sizing: border-box;
+}
+
+.group-contain1 {
+    width: 600px;
+    padding: 185px 0 150px 100px;
+    box-sizing: border-box;
+}
+
+.group-contain,
+.group-contain1 h1 {
+    margin-top: 57px;
+}
+
+.group-explain {
+    margin: 30px 0;
+    line-height: 30px;
+    color: #888;
+}
+
+.group-url span {
+    font-weight: bold;
+}
+
+.group-url a {
+    color: #2b5da5;
+}
+
+.group-url a:hover {
+    color: rgb(12, 93, 170);
+}
+
+.group-join {
+    display: block;
+    width: 132px;
+    height: 50px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 31px;
+    margin-bottom: 53px;
+}
+
+.group-join:hover {
+    background-color: rgb(12, 93, 170);
+    color: #fff;
+}
+
+.group-img {
+    width: 600px;
+    padding: 185px 0px 150px 0;
+}
+
+.group-img img {
+    width: 100%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.group-img .scale-img {
+    width: 100%;
+    height: 394px;
+    overflow: hidden;
+}
+
+.group-img .scale-img:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all .5s ease;
+}
+
+.depart_bar {
+    width: 100%;
+    height: 334px;
+    display: flex;
+}
+
+.depart {
+    width: 20%;
+    height: 100%;
+    background: #f4f4f4;
+    box-sizing: border-box;
+    border-right: 2px solid white;
+    position: relative;
+}
+
+.depart_img {
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+}
+
+.depart_img img {
+    margin: 0 auto;
+}
+
+.depart_de {
+    width: 100%;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.depart_con {
+    padding: 0 10%;
+    margin-top: 20px;
+    line-height: 20px;
+}
+
+.shenqin {
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    display: none;
+    /* background: #1167ad; */
+    color: #fff;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    margin-left: -65px;
+    cursor: pointer;
+}
+
+.depart:hover {
+    background: #2b5da5;
+    color: #fff;
+    transition: all 1s ease;
+}
+
+.depart:hover .shenqin {
+    display: block;
+}
+
+.depart:hover .depart_img {
+    display: none;
+}
+
+.depart:hover .depart_con {
+    display: none;
+}
+
+.depart:hover .depart_de {
+    position: absolute;
+    top: 20%;
+}
+
+#news {
+    width: 100%;
+    height: 728px;
+    background-color: white;
+}
+
+.group-contain1 ul {
+    margin-top: 25px;
+}
+
+.group-contain1 ul li {
+    line-height: 28px;
+}

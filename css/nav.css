@@ -1,0 +1,228 @@
+* {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+a:visited,
+a:active,
+a:hover,
+a:link {
+    text-decoration: none!important;
+    outline: none!important;
+}
+
+.nav {
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    /* border-bottom: 1px solid #63b504; */
+    background-color: white;
+    z-index: 999;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav .loginIn .dropdown-menu {
+    min-width: auto;
+}
+
+.nav-bar {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.logo,
+.nav-main {
+    vertical-align: middle;
+    line-height: 55px;
+    display: inline-block;
+}
+
+.logo img {
+    vertical-align: middle;
+    max-height: 40px;
+    max-width: 160px;
+    cursor: pointer;
+}
+
+.nav-main {
+    height: 100%;
+    margin-left: 30px;
+}
+
+.nav-main ul {
+    float: left;
+    height: 100%;
+}
+
+.nav-main ul li {
+    float: left;
+    height: 100%;
+}
+
+.nav-main ul li a {
+    display: inline-block;
+    width: 110px;
+    height: 100%;
+    line-height: 55px;
+    text-align: center;
+    white-space: nowrap;
+    color: black;
+    background-color: white;
+}
+
+.nav-main ul li .active {
+    color: white;
+    background-color: rgb(12, 93, 170);
+}
+
+.nav-main ul li a:hover {
+    background-color: rgb(12, 93, 170);
+    color: white;
+}
+
+.login {
+    float: right;
+    line-height: 55px;
+}
+
+.login span {
+    display: inline-block;
+    height: 30px;
+    width: 115px;
+    color: #63b504;
+    border: 1px solid #63b504;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.login span:hover {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.search1 {
+    height: 55px;
+    line-height: 55px;
+    margin-left: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.search1 input {
+    height: 28px;
+    line-height: 28px;
+    border: none;
+    text-indent: 10px;
+    box-sizing: border-box;
+    width: 160px;
+}
+
+input,
+button {
+    outline: none;
+}
+
+.icon-search {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.loginIn {
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+}
+
+.loginIn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.nav-icon-1 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.nav-icon-2 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.nav-icon-3 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.nav-icon-4 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.icon-sousuo1 {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.menu-position {
+    left: inherit;
+    right: 0;
+}
+
+.cWhite {
+    color: white!important;
+}
+
+.bWhite {
+    border-color: white!important;
+}
+
+.nav-main-other {
+    display: block;
+}
+
+#nav .dropdown-menu>li>a {
+    padding: 10px 20px;
+}
+
+.mc-bbc {
+    border-bottom-color: #0c5daa!important;
+}
+
+.mc-bgc {
+    background-color: #0c5daa!important;
+}
+
+.mc-bc {
+    border-color: #0c5daa!important;
+}
+
+.mc-c {
+    color: #0c5daa!important;
+}

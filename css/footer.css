@@ -1,0 +1,59 @@
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+.footer-content {
+    width: 1200px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.footer-content span {
+    color: black;
+    display: inline-block;
+}
+
+.footer-content span img {
+    vertical-align: middle;
+}
+
+.footer-content .visitorNumber {
+    float: right;
+    margin-right: 150px;
+}
+
+.language {
+    display: inline-block;
+    float: right;
+    position: relative;
+}
+
+#footer .menu-position {
+    top: -67px;
+}
+
+#footer #dropdownMenu2 {
+    cursor: pointer;
+}
+
+#footer .dropdown-menu {
+    width: 80px;
+    min-width: 80px;
+}
+
+#footer .icon-down {
+    line-height: 20px;
+}
+
+#footer .copyRight {
+    overflow: hidden;
+    height: 50px;
+    vertical-align: top;
+    display: block;
+    float: left;
+}

@@ -1,0 +1,269 @@
+.sequence-list,
+.sequence-list .sequences {
+    height: 114px;
+}
+
+.sequences div {
+    width: 132px;
+    height: 109px;
+    line-height: 109px;
+    background-size: 132px 109px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1pc;
+    color: #fff;
+    font-weight: 400;
+    background-color: #9ba192;
+}
+
+.sequences .all-category {
+    background-image: url(../images/type01.jpg);
+}
+
+.sequences .sequence-1 {
+    background-image: url(../images/type02.jpg);
+}
+
+.sequences .sequence-2 {
+    background-image: url(../images/type03.jpg);
+}
+
+.sequences .sequence-3 {
+    background-image: url(../images/type04.jpg);
+}
+
+.sequences .sequence-4 {
+    background-image: url(../images/type05.jpg);
+}
+
+.sequences .sequence-5 {
+    background-image: url(../images/type06.jpg);
+}
+
+.sequences .sequence-6 {
+    background-image: url(../images/type07.jpg);
+}
+
+.sequences .active {
+    background-color: #df0615!important;
+    background-image: none!important;
+    position: relative;
+    overflow: visible;
+}
+
+.sequences .active:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 44%;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9pt solid #df0615;
+}
+
+.main-container {
+    background-color: #fafafb;
+    margin: 50px 0;
+    padding: 15px 15px 50px;
+    overflow: hidden;
+}
+
+.search {}
+
+.search>input {
+    width: 120px;
+    height: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0 0 0 5px;
+    margin-right: 10px;
+    background: url("../images/jt-bottom.png") no-repeat 105px 10px;
+}
+
+.search select {
+    width: 150px;
+    height: 30px;
+    -webkit-appearance: none;
+    /*for chrome*/
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0 0 0 5px;
+    margin-right: 10px;
+    background: url("../images/jt-bottom.png") no-repeat 130px 12px;
+}
+
+.searchDiv {
+    width: 280px;
+    height: 30px;
+    float: right;
+    border: 1px solid #cccccc;
+    background-color: #f5f7fa;
+    border-radius: 20px;
+}
+
+.searchDiv input {
+    width: 220px;
+    height: 28px;
+    outline: none;
+    border: none;
+    background: none;
+    margin-left: 10px;
+}
+
+.searchDiv a {
+    float: right;
+    margin: 4px 8px 0 0;
+}
+
+table.list-table-std {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    border-spacing: 0;
+    display: none;
+    text-align: left;
+    font-size: 14px;
+}
+
+table.list-table-std:first-child {
+    display: inline-table;
+}
+
+table.list-table-std thead tr {
+    background-color: #ccc;
+    color: #2a2a38;
+}
+
+.list-table-std tbody tr:hover {
+    background: #fff;
+}
+
+table.list-table-std td {
+    border-bottom: #dedede dotted 1px;
+    padding: 0px 20px;
+    height: 48px;
+    line-height: 48px;
+}
+
+table.list-table-std th {
+    border-bottom: #dedede solid 1px;
+    padding: 0px 20px;
+    height: 48px;
+    line-height: 48px;
+    font-weight: 500;
+}
+
+.firemark {
+    width: 14px;
+    height: 18px;
+    display: inline-block;
+    background: url("../images/fire-mark.png") no-repeat;
+    vertical-align: middle;
+}
+
+.arrow-grey {
+    width: 13px;
+    height: 6px;
+    display: inline-block;
+    background: url("../images/jt-bottom.png") no-repeat;
+    vertical-align: middle;
+}
+
+.list-table-std tr.open {
+    display: table-row;
+}
+
+.clickHot.open {
+    background-color: #ffffff;
+}
+
+.content-layout-1 {
+    padding: 10px 60px;
+    color: #2a2a38;
+}
+
+.content-layout-1 dt,
+dd {
+    line-height: 30px;
+}
+
+.content-layout-1 dt {
+    color: #333333;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.content-layout-1 dd {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.content-layout-1 .bub {}
+
+.list-table-std .hideTR {
+    display: none;
+    background: none;
+}
+
+.list-table-std .hideTR:hover {
+    background: none;
+}
+
+
+/*button*/
+
+
+/*.pub-button-small {display: inline-block;padding: 0 10px;height: 24px;line-height: 24px; font-size: 12px;cursor: pointer;text-align: center; border-radius: 6px;}
+.pub-button-common {display: inline-block;padding: 0 10px;height: 30px;line-height: 30px; font-size: 12px;cursor: pointer;text-align: center; border-radius: 6px;}
+.pub-button-big {display: inline-block;padding: 0 10px;}
+.pub-button-common.style_w80,.pub-button-small.style_w80 {width: 80px;}
+.pub-button-common.style_blue,.pub-button-small.style_blue {background: #ec8088; color: #ffffff;}
+.pub-button-common.style_blue:hover,.pub-button-small.style_blue:hover {background: #df0615;}*/
+
+.bub span {
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 10px;
+    background: #df0615;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bub span img {
+    width: 17px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 5px;
+}
+
+.bub span:hover {
+    background: #ec8088;
+}
+
+.flip {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.flip a {
+    padding: 0 15px;
+    line-height: 30px;
+    color: #333;
+    display: inline-block;
+    background-color: #f5f5f5;
+}
+
+.flip a.hover {
+    color: #fff;
+    background-color: #df0615;
+}

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索</title>
+    <link rel="stylesheet" href="../iconFont/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/social.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div class="nav mc-bbc">
+            <div class="nav-bar" style="position: relative">
+                <div class="logo" ng-click="gotoHomepage();"><img alt="" src="../images/100708.jpeg "></div>
+
+                <div class="search1" id="search">
+                    <span class="icon iconfont icon-sousuo1 mc-c"></span>
+                    <input id="searchInput" ng-model="searchResult" class="search-result ng-pristine ng-valid bWhite ng-empty ng-touched" type="text" placeholder="搜索职位" search-result="">
+                </div>
+                <div ng-show="!userName" class="login ng-hide" ng-click="login()">
+                    <span class="ng-binding mc-bc mc-c">登录/注册</span>
+                </div>
+
+                <div ng-show="userName" class="loginIn" style="display: none;">
+                    <img data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" alt="" ng-src="images/defaultHeadImage.png" src="../images/defaultHeadImage.png">
+                    <ul class="dropdown-menu menu-position" aria-labelledby="dropdownMenu1">
+                        <li><a href="javascript:void (0);" ng-click="personCenter();" class="ng-binding"><span class="nav-icon-1"></span>个人中心</a></li>
+                        <li ng-hide="canBindCode == 1"><a href="javascript:void (0);" ng-click="boundWeChat()" class="ng-binding"><span class="nav-icon-2"></span>绑定微信</a></li>
+                        <li ng-hide="canChangePassword == 1"><a href="javascript:void (0);" ng-click="modifyPassword()" class="ng-binding"><span class="nav-icon-3"></span>修改密码</a></li>
+                        <li><a href="javascript:void (0);" ng-click="exitLogin()" class="ng-binding"><span class="nav-icon-4"></span>退出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 100px;">
+        <div class="moduleName">
+            <p>RECRUITMENT POSITION</p>
+            <i></i>
+            <span>全部职位</span>
+        </div>
+        <!-- <div id="summaryList" class="sequence-list">
+                <div class="sequences">
+                    <div class="all-category"><span>集团总部</span></div>
+                    <div class="sequence-1"><span>城市运营</span></div>
+                    <div class="sequence-2"><span>房产开发</span></div>
+                    <div class="active sequence-3"><span>金融产业</span></div>
+                    <div class="sequence-4"><span>产业投资</span></div>
+                    <div class="sequence-5"><span>商业贸易</span></div>
+                    <div class="sequence-6"><span>现代服务</span></div>
+                </div>
+            </div> -->
+        <div class="main-container">
+            <div class="search">
+                <!--<input type="text" placeholder="职位分类"/>
+                <input type="text" placeholder="成员公司"/>
+                <input type="text" placeholder="工作地点"/>-->
+                <select name="">
+                    <option value="">职位分类</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+                <select name="">
+                    <option value="">业务板块</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+                <select name="">
+                    <option value="">工作地点</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+                <div class="searchDiv">
+                    <input type="text" placeholder="搜索职位名称" />
+                    <a href=""><img width="18" src="../images/search.png" alt="" /></a>
+                </div>
+            </div>
+
+            <div>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>职位类别</th>
+                            <th>工作单位</th>
+                            <th>工作地点</th>
+                            <th>发布时间</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td>2017-05-06</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dd>招聘人数：25人</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td>2017-05-06</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td>2017-05-06</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td>2017-05-06</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td>2017-05-06</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>招聘类别</th>
+                            <th>工作地点</th>
+                            <th>事业部</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>招聘类别</th>
+                            <th>工作地点</th>
+                            <th>事业部</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>招聘类别</th>
+                            <th>工作地点</th>
+                            <th>事业部</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>招聘类别</th>
+                            <th>工作地点</th>
+                            <th>事业部</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>招聘类别</th>
+                            <th>工作地点</th>
+                            <th>事业部</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="list-table-std" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="20"></th>
+                            <th>职位名称</th>
+                            <th>招聘类别</th>
+                            <th>工作地点</th>
+                            <th>事业部</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickHot" data_postid="107640" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>销售工程师（储能）</td>
+                            <td>
+                                <font title="支持类" initialletter="Z">销售类别</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+                        <tr class="hideTR" id="107640">
+                            <td colspan="99">
+                                <div class="content-layout-1">
+                                    <dl>
+                                        <dt>工作职责</dt>
+                                        <dd>1、编写技术类培训课件及相关资料文件，为目标客户开发定制化培训课程；<br>2、对客户、服务站等定期开展专业技术培训工作。</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>任职资格</dt>
+                                        <dd>1、 本科以上学历，从事汽车/机电维修/锂电从业经验3年以上；<br>2、 了解锂电池基础知识、BMS基本功能及工作原理，熟练操作Office办公自动化软件；<br>3、 具备2年以上汽车或动力电池技术培训讲师工作经验，能独立开发课件。<br>4、 有较强的客户服务意识和良好的沟通能力，有亲和力，能吃苦耐劳、适应短期出差工作；</dd>
+                                    </dl>
+                                    <dl class="mt10">
+                                        <dt>工作类型</dt>
+                                        <dd>全职</dd>
+                                    </dl>
+                                    <div class="bub">
+                                        <span><img src="../images/btn-icon01.png" alt=""/>收藏职位</span>
+                                        <span><img src="../images/btn-icon02.png" alt=""/>立即申请</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109612" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件（开发）工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109623" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td><img src="../images/hot.png" alt="" /></td>
+                            <td>软件开发工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">质量类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109624" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>技术员</td>
+                            <td>
+                                <font title="运营类" initialletter="Y">运营类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                        <tr class="clickHot" data_postid="109625" data_recruittype="2" onclick="javascript:showPostDetail(this);">
+                            <td></td>
+                            <td>硬件工程师</td>
+                            <td>
+                                <font title="研发类" initialletter="Y">研发类</font>
+                            </td>
+                            <td>
+                                <font title="宁德市" initialletter="N">上海</font>
+                            </td>
+                            <td>集团总部</td>
+                            <td><span class="arrow-grey hand"></span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="flip">
+                <a href="">首页</a>
+                <a href="">上一页</a>
+                <a class="hover" href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">下一页</a>
+                <a href="">尾页</a>
+
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer">
+            <div class="footer-content">
+                <span class="copyRight"><p style="text-align:center">大易招聘 &nbsp;© 2007-2018&nbsp;Powered&nbsp;by <a href="http://www.dayee.com" target="_blank">Dayee</a>.</p></span>
+                <div id="dropdownMenu2" class="language clearFloat">
+                    <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img   alt=""  src="../images/china.png"></span>
+                    <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="ng-binding">中文</span>
+                    <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="iconfont icon-down"></span>
+                    <ul class="dropdown-menu menu-position" aria-labelledby="dropdownMenu2">
+                        <li ng-click="changeLanType(1)"><a href="javascript:void (0);">中文</a></li>
+                        <li ng-click="changeLanType(2)"><a href="javascript:void (0);">英文</a></li>
+                    </ul>
+                </div>
+                <span class="visitorNumber ng-binding">今日访问：0人次</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery.js" charset="utf-8"></script>
+<script>
+    function showPostDetail(_this) {
+
+        var $this = $(_this);
+
+        var postId = $this.attr("data_postid");
+        var recruitType = $this.attr("data_recruittype");
+
+        $hideTr = $("#" + postId + "");
+
+        if ($hideTr.length > 0) {
+            if ($hideTr.hasClass("open")) {
+                $this.removeClass("open");
+                $hideTr.removeClass("open");
+            } else {
+                $this.addClass("open");
+                $hideTr.addClass("open");
+            }
+        } else {
+            var url = "/wt/CATL/web/json/position/detail" + "?recruitType=" + recruitType + "&postId=" + postId;
+            $.getJSON(url, function(json) {
+                if (json != null && json != undefined) {
+
+                    var html = '<tr class="hideTR open"' + 'id="' + json.postInfo.postId + '">' +
+                        '<td colspan="99"><div class="content-layout-1"><dl><dt>工作职责</dt><dd>' +
+                        json.postInfo.workConcet +
+                        '</dd></dl><dl class="mt10"><dt>任职资格</dt><dd>' +
+                        json.postInfo.serviceCondition +
+                        '</dd></dl><dl class="mt10"><dt>工作类型</dt><dd>' +
+                        json.postInfo.workType +
+                        '</dd></dl><div class="bub" pt-id="' + json.postInfo.postId + '" pt-reType="' + json.postInfo.recruitType +
+                        '" postIdToken="' + json.postInfo.postIdToken + '">' +
+                        '<span class="pub-button-small style_blue">收藏职位</span>' +
+                        '<span class="pub-button-small style_blue ml10">立即申请</span></div> </div></td></tr>';
+
+                    $this.addClass('open');
+                    $this.after(html);
+                }
+            });
+        }
+    }
+
+    $(function() {
+        $(".sequences>div").click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $(this).index();
+            $(".tab_box > div").eq(index).show().siblings().hide();
+        });
+    });
+</script>
+
+</html>
